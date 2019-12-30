@@ -9,11 +9,12 @@ script:
     - docker run -e CI=true bellom/docker-react npm run test
 
 deploy:
+    edge: true
     provider: elasticbeanstalk
-    region: "us-west-2"
+    region: "eu-central-1"
     app: "docker-react"
-    env: "Docker-env"
-    bucket_name: "the-name-of-the-backet-from-s3"
+    env: "DockerReact-env"
+    bucket_name: "elasticbeanstalk-eu-central-1-248941629254"
     bucket_path: "docker-react"
     on:
         branch: master
